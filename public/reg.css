@@ -1,0 +1,239 @@
+import url ("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background:linear-gradient(to bottom right,rgb(255, 83, 186),rgb(5, 119, 106));
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-size: cover;
+}
+.container {
+  max-width: 1700px;
+  height: 900px;
+  background: transparent;
+  backdrop-filter: blur(20px);
+  padding: 25px;
+  border: 1px solid;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.container header {
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 500;
+  text-align: center;
+}
+.container .form {
+    margin-top: 30px;
+}
+.form .input-box {
+  padding: 10px;
+  width: 35%;
+  margin-left: 6%;
+  margin-top: 20px;
+}
+.input-box label {
+  color: white;
+}
+.form :where(.input-box input, .select-box) {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  color: black;
+  margin-top: 8px;
+  background: #8d8a8a;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 15px;
+}
+.input-box input:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+.form .column {
+  display: flex;
+  column-gap: 15px;
+}
+.form .gender-box {
+  margin-top: 20px;
+}
+.gender-box h3 {
+  color: black;
+  font-size: 1rem;
+  margin-left: 9%;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.form :where(.gender-option, .gender) {
+  display: flex;
+  align-items: center;
+  margin-left: 6%;
+  column-gap: 50px;
+  flex-wrap: wrap;
+}
+
+.form .gender {
+  column-gap: 5px;
+}
+
+.gender input {
+  accent-color: rgb(17, 2, 73);
+}
+
+.form :where(.gender input, .gender label) {
+  cursor: pointer;
+}
+
+.gender label {
+  color:black;
+}
+
+.address :where(input, .select-box) {
+  margin-top: 15px;
+}
+
+.form .year-box {
+    margin-left: 50px;
+}
+
+.select-box select {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  color: black;
+  font-size: 1rem;
+}
+
+.form button {
+  height: 55px;
+  width: 50%;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 30px;
+  margin-left: 23%;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: rgb(78, 45, 247);
+}
+
+.form button:hover {
+    width: 35%;
+    margin-left: 35%;
+    font-family: cursive;
+    background: rgb(20, 3, 104);
+}
+
+.btn {
+  margin: 5px;
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 20px;
+  color: aqua;
+  width: 100px;
+  height: 40px;
+  font-size: 1rem;
+  font-family: cursive;
+  margin-bottom: 10px;
+  margin-right: 8px;
+}
+
+.btn:hover {
+  border: 1px solid black;
+  color: #fff;
+  backdrop-filter: blur(10px);
+}
+
+select{
+  border-radius: 5px;
+  padding:5%;
+  
+}
+
+@media screen and (max-width: 500px) {
+  .form .column {
+    flex-wrap: wrap;
+  }
+  .form :where(.gender-option, .gender) {
+    row-gap: 15px;
+  }
+}
+.background{
+    opacity: 0.5;
+}
+
+::placeholder {
+    color: black;
+    font-size: small;
+}
+
+
+
+
+.loader {
+	position: absolute;
+	top: 50%; left: 50%;
+  background: transparent;
+  opacity: 0.35;
+	
+	--from: 450px;
+	--to: 20px;
+	--size: 20px;
+	--time: 29000ms;
+	--count: 100; /* up to 100 */
+	--turns: 8;
+}
+
+.circle {
+	position: absolute;
+	
+	--delay: calc(var(--time) / var(--count) * -1 * var(--i));
+	rotate: calc(var(--turns) * 1turn / var(--count) * var(--i));
+	
+	animation: circle var(--time) var(--delay) ease-in-out infinite;
+}
+.circle:nth-child(n + var(--count)) {
+	display: none;
+}
+.circle::before {
+	content: '';
+	display: block;
+	width: var(--size); aspect-ratio: 1/1;
+	border-radius: 50%;
+	background-color: white;
+	transform-origin: center center;
+
+	animation: circleSize var(--time) var(--delay) ease-in-out infinite;
+}
+
+/* rainbow */
+.rainbow .circle::before {
+	background-color: hsl(
+		calc(1turn /  ( var(--count) / var(--turns) ) * var(--i)) 
+		100% 70%
+	);
+}
+
+/* animations */
+@keyframes circle {
+	from { transform: translate(0, var(--from)); }
+	to { transform: translate(0, var(--to)); }
+}
+@keyframes circleSize {
+	0%, 100% { transform: scale(0); }
+	25%, 50% { transform: scale(1); }
+}

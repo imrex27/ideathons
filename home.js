@@ -9,9 +9,6 @@ server.use(express.static('public'));
 
 server.use(rotes);
 
-// server.get('/',function(req,res){
-//    res.redirect(__dirname +'/public/home.html')
-// });
 
 server.use(express.static(path.join(__dirname, 'public')));
 

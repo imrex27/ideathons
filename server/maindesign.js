@@ -1,3 +1,16 @@
+const express = require('express');
+const server = express();
+const bodyparser = require('body-parser');
+const mongoose = require('mongoose')
+//const md = require('./maindesign.js')
+server.use(express.static('public'));
+
+server.get('/',function(req,res){
+    res.redirect(__dirname +'/public/home.html')
+ });
+ 
+
+
 
 (function( name, factory )
 {
@@ -443,7 +456,7 @@ return Factory;
 });
 
 
-new Ribbons({
+  new Ribbons({
 colorSaturation: "90%",
 colorBrightness: "20%",
 colorAlpha: 0.5,
@@ -457,3 +470,7 @@ animateSections : true,
 });
 
 
+
+server.listen('4000',()=>{
+    console.log('Server running on 4000')
+})

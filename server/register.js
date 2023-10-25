@@ -1,7 +1,8 @@
 const express = require('express');
-const server = express();
+const server = express.Router();
 const bodyparser = require('body-parser');
 const mongoose = require('mongoose')
+//const hm = require('./home')
 
 server.use(express.static('public'));
 
@@ -31,12 +32,13 @@ const rath = new mongoose.Schema({
 
 });
 const blix = mongoose.model('data',rath);
-server.get('/',(req,res)=> {
-    res.sendFile(__dirname + '/public/reg.html')
-})
+// server.get('/',(req,res)=> {
+//     res.sendFile(__dirname + '/public/reg.html')
+// })
 
+console.log('hello');
 
-server.post('/registration',(req,res)=>{
+server.post('/register',(req,res)=>{
     console.log(req.body)
     var firstname=req.body.firstname
     var lastname=req.body.lastname
@@ -56,6 +58,13 @@ server.post('/registration',(req,res)=>{
 
 
 });
-server.listen(3100,()=>{
-    console.log("server running Port 3100");
+// server.listen(3100,()=>{
+//     console.log("server running Port 3100");
+// })
+
+
+
+server.get('/test',(req,res)=>{
+    res.send("<h1>testing");
 })
+module.exports=server;

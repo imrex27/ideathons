@@ -1,14 +1,25 @@
 const express = require('express');
 const server = express();
 const bodyparser = require('body-parser');
+const path = require('path');
 const mongoose = require('mongoose')
-//const md = require('./maindesign.js')
+const rotes = require('../ideathons/server/register')
 server.use(express.static('public'));
 
-server.get('/',function(req,res){
-   res.redirect(__dirname +'/public/home.html')
+
+server.use(rotes);
+
+// server.get('/',function(req,res){
+//    res.redirect(__dirname +'/public/home.html')
+// });
+
+server.use(express.static(path.join(__dirname, 'public')));
+
+server.get('/', function(req, res) {
+  res.sendFile(path.join(__dirname, 'public', 'home.html'));
 });
 
-server.listen ('2700',function(req,res){
-    console.log('Running on sever 2700');
-});
+
+server.listen('4000',()=>{
+    console.log('Server running on 4000')
+})

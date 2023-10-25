@@ -124,7 +124,7 @@
 
                 <header>Registration Form</header><br>
                 <hr>
-                <form action="#" class="form">
+                <form action="/register" method="post"  class="form">
 
                     <div class="column">        <div class="input-box">
                     <label>First Name</label>
@@ -210,22 +210,22 @@
                             </div>
 
                             <div class="gender">
-                                <input type="radio" id="check-female" name="gender" >
+                                <input type="radio" id="check-female" name="gender">
                                 <label for="check-female">Female</label>
                             </div>
 
                             <div class="gender">
-                                <input type="radio" id="check-other" name="gender" >
+                                <input type="radio" id="check-other" name="gender">
                                 <label for="check-other">prefer not to say</label>
                             </div>
                         </div>
                     </div>
 
-                        <button>Submit</button>
+                        <input type="submit" value="Submit">
 
                 </form>
     </section>
-
-
+<script src="../register.js"></script>
+<script src="../home.js"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@ const server = express();
 const bodyparser = require('body-parser');
 const path = require('path');
 const mongoose = require('mongoose')
-const rotes = require('../ideathons/server/register')
+const rotes = require('./register')
 server.use(express.static('public'));
 
 
@@ -17,6 +17,7 @@ server.get('/', function(req, res) {
 });
 
 
-server.listen('4000',()=>{
-    console.log('Server running on 4000')
+
+server.listen('4100',()=>{
+    console.log('Server running on 4100')
 })

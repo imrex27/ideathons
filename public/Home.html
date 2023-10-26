@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/bootstrap-5.3.1/css/bootstrap-reboot.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-    <script src=""></script>
+    <script src="https://kit.fontawesome.com/a54d2cbf95.js"></script>
 
 </head>
 <body style="background-color: rgb(245, 241, 241);">
@@ -123,6 +123,7 @@
                         <!-- <button class="btn">Book Now</button> -->
                       </div>
                     </div>
+                    
                   </main><br><br><br>
                    
                    <footer>
@@ -174,11 +175,45 @@
             
             
                     </div>
+                    <a href="" class="to-top">
+                      <i class="fas fa-chevron-up"></i>
+                  </a>
                  </footer>
 
                    <link rel="stylesheet" href="/bootstrap-5.3.1/js/bootstrap.min.js">
 
-
+                   <script>
+                    const totop= document.querySelector(".to-top");
+            
+                    window.addEventListener("scroll", ()=>{
+                        if(window.pageYOffset >100){
+                            totop.classList.add("active");
+                        
+            
+                        }
+                        else
+                        {
+                         totop.classList.remove("active");
+                        }
+            
+                        
+                    })
+                </script>
+                <script>
+                  const urlParams = new URLSearchParams(window.location.search);
+                  const status = urlParams.get('status');
+                  if (status === 'success') {
+                    alert('Form submitted successfully!');
+                  }
+                </script>
+                <style>
+                  html{
+                    scroll-behavior: smooth;
+                  }
+                  .to-top{
+                    background-color: white;
+                  }
+                </style>
 
 </body>
 </html>

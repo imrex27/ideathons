@@ -87,7 +87,8 @@ server.post('/register',(req,res)=>{
             console.log('Email sent: ' + info.response);
         }
     });
-    res.sendFile(__dirname + '/public/home.html')
+   // res.sendFile(__dirname + '/public/home.html')
+    res.redirect('/?status=success');
 });
 //  server.listen(3100,()=>{
 //    console.log("server running Port 3100");
